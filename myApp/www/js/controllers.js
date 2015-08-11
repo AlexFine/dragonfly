@@ -55,8 +55,11 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('searchController', function($scope, $stateParams, $ionicLoading, $http, $ionicActionSheet, $cordovaFile, $ionicPopup, $cordovaFileTransfer, $state, spellcheck, noteCreation, $cordovaGoogleAnalytics, $ionicModal, $rootScope, search) {
-    
+.controller('searchController', function($scope, $stateParams, $ionicLoading, $http, $ionicActionSheet, $cordovaFile, $ionicPopup, $state, $ionicModal, $rootScope, search) {
+    $scope.search = function (query) {
+    var tmpvar = search.getFacts(query);
+    $scope.facts = tmpvar;
+    }
 });
 
 
