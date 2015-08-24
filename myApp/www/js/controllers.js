@@ -42,6 +42,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function($scope) {
+    alert("does this even fucking work");
   $scope.playlists = [
     { title: 'Reggae', id: 1 },
     { title: 'Chill', id: 2 },
@@ -56,9 +57,16 @@ angular.module('starter.controllers', [])
 })
 
 .controller('searchController', function($scope, $stateParams, $ionicLoading, $http, $ionicActionSheet, $cordovaFile, $ionicPopup, $state, $ionicModal, $rootScope, search) {
-    $scope.search = function (query) {
+    alert("one");
+    $scope.search = {};
+    $scope.search = function () {
+    alert("two");
+    var query = $scope.search.query;
+        alert(query + "three");
     var tmpvar = search.getFacts(query);
+        alert("four");
     $scope.facts = tmpvar;
+        alert("five");
     }
 });
 
