@@ -2,14 +2,16 @@
     <ion-content>
 
         <div ng-controller="PlaylistsCtrl">
+<!--
             <div style="padding:1%;">
-            <button class="button button-outline button-energized" style="width:49%; margin-right:1%;">
-                Save Facts
-            </button>
+                <button class="button button-outline button-energized" style="width:49%; margin-right:1%;" ng-click="modal.show()">
+                    Save Facts
+                </button>
                 <button class="button button-outline button-energized" style="width:49%">
-                Share Dragonfly
-            </button>
-                </div>
+                    Share Dragonfly
+                </button>
+            </div>
+-->
             <div class="list">
 
                 <div class="item item-button-right">
@@ -24,13 +26,62 @@
             <div class="card" ng-repeat="fact in Facts">
                 <div class="item item-text-wrap">
                     <blockquote style="border-color:#ff9999;">
-                    <p><b> {{$index + 1}}. </b> {{Facts[$index]}}
-                        <br><small>- Encyclipedia Britanika</small>
-                    </p>
-                        </blockquote>
+                        <p><b> {{$index + 1}}. </b> {{Facts[$index]}}
+                            <br><small>- Encyclipedia Britanika</small>
+                        </p>
+                    </blockquote>
                 </div>
             </div>
 
-        </div>
+        
+
+        
+
+        <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">My Modal title</h1>
+                    <div class="button button-clear" ng-click="modal.hide()"><span class="icon ion-close"></span>
+                    </div>
+                </ion-header-bar>
+                <ion-content>
+                    <div class="list list-inset">
+                <div data-ng-controller="help">
+                    <div id="messages" class="alert alert-success" data-ng-show="messages" data-ng-bind="messages"></div>
+                    <div data-ng-show="progress.active()" style="color: red; font-size: 50px;">Sending&hellip;</div>
+                    <form name="helpForm" novalidate role="form">
+                        <div class="form-group">
+                            <label class="item item-input">
+                                <span class="label label-danger" data-ng-show="submitted && helpForm.name.$error.required">Required!</span>
+                                <input type="text" placeholder="Name" name="name" class="form-control" data-ng-model="name" required style="height:30px;" />
+
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="item item-input">
+
+                                <span class="label label-danger" data-ng-show="submitted && helpForm.email.$error.required">Required!</span>
+                                <span class="label label-danger" data-ng-show="submitted && helpForm.$error.email">Invalid email!</span>
+                                <input type="email" name="email" data-ng-model="email" class="form-control" placeholder="Email" required style="height:30px;" />
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <label class="item item-input">
+
+                                <span class="label label-danger" data-ng-show="submitted && helpForm.question.$error.required">Required!</span>
+                                <textarea name="question" data-ng-model="comments" class="form-control" placeholder="Notes" required style="height:50px;"></textarea>
+                            </label>
+                        </div>
+
+                        <a class="button button-outline icon-right ion-checkmark-round button-balanced" style="width:95%; margin:10px;" data-ng-disabled="progress.active()" data-ng-click="submit(helpForm)">Submit</a>
+                    </form>
+                </div>
+            </div>
+
+                </ion-content>
+            </ion-modal-view>
+        </script>
+</div>
+
     </ion-content>
 </ion-view>
