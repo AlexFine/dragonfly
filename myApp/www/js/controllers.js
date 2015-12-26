@@ -42,8 +42,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function ($scope, $http) {
-    $scope.go = function () {
-        $http.get("http://dragonflysearch.com/api/search.php?q=Hello")
+    $scope.go = function (query) {
+        $http.get("http://dragonflysearch.com/api/search.php?q=" + query)
             .then(function (response) {
                 //$scope.Facts = response.data.Facts;
                 console.log("RESPONSE" + response.data.Facts);
@@ -60,26 +60,26 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function ($scope, $stateParams) {})
 
 .controller('searchController', function ($scope, $stateParams, $http) {
-    $scope.go = function () {
-        $http.get("http://dragonflysearch.com/api/search.php?q=Hello")
-            .then(function (response) {
-                //$scope.Facts = response.data.Facts;
-                console.log("RESPONSE" + response.data.Facts);
-                dflynotes = resp.data;
-                $scope.Facts = dflynotes.Facts[0];
-                console.log("SCOPE FACTS" + Facts);
-                console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
-            })
-    }
-    $scope.search = function (query) {
-        $http.get("http://dragonflysearch.com/api/search.php?q=" + query)
-            .then(function (response) {
-                //$scope.Facts = response.data.Facts;
-                console.log("RESPONSE" + response.data.Facts);
-                dflynotes = resp.data;
-                $scope.Facts = dflynotes.Facts[0];
-                console.log("SCOPE FACTS" + Facts);
-                console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
-            })
-    }
+//    $scope.go = function (query) {
+//        $http.get("http://dragonflysearch.com/api/search.php?q=" + query)
+//            .then(function (response) {
+//                //$scope.Facts = response.data.Facts;
+//                console.log("RESPONSE" + response.data.Facts);
+//                dflynotes = resp.data;
+//                $scope.Facts = dflynotes.Facts[0];
+//                console.log("SCOPE FACTS" + Facts);
+//                console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
+//            })
+//    }
+//    $scope.search = function (query) {
+//        $http.get("http://dragonflysearch.com/api/search.php?q=" + query)
+//            .then(function (response) {
+//                //$scope.Facts = response.data.Facts;
+//                console.log("RESPONSE" + response.data.Facts);
+//                dflynotes = resp.data;
+//                $scope.Facts = dflynotes.Facts[0];
+//                console.log("SCOPE FACTS" + Facts);
+//                console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
+//            })
+//    }
 });
