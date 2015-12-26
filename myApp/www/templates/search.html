@@ -1,50 +1,36 @@
 <ion-view view-title="Search">
     <ion-content>
-<!--
-        <div class="list list-inset">
-            <label class="item item-input">
-                <i class="icon ion-search placeholder-icon"></i>
-                <input ng-model="query" type="text" placeholder="Search">
 
-            </label>
-            <button class="button button-assertive" ng-click="search();">
-                Fly
+        <div ng-controller="PlaylistsCtrl">
+            <div style="padding:1%;">
+            <button class="button button-outline button-energized" style="width:49%; margin-right:1%;">
+                Save Facts
             </button>
-        </div>
--->
-         <div ng-controller="PlaylistsCtrl">
-<!--<button class="button" ng-click="go()">GOO</button>-->
-<!--
-        <ul>
-            <li ng-repeat="fact in Facts">
-                {{ x.Facts + ', ' + x.Facts }}
-            </li>
-        </ul>
--->
-        
-        <div class="list">
+                <button class="button button-outline button-energized" style="width:49%">
+                Share Dragonfly
+            </button>
+                </div>
+            <div class="list">
 
-            <div class="item item-button-right">
-               <input ng-model="query" type="text" placeholder="Search"> 
-                <button class="button button-assertive"  ng-click="go(query)" style="height:50px;">
-                    Fly <i class=" ion-jet"></i>
-                </button>
+                <div class="item item-button-right">
+                    <input ng-model="query" type="text" placeholder="Search" style="width:100%;">
+                    <button class="button button-assertive" ng-click="go(query)" style="height:50px;">
+                        Fly
+                    </button>
+                </div>
+
+
+            </div>
+            <div class="card" ng-repeat="fact in Facts">
+                <div class="item item-text-wrap">
+                    <blockquote style="border-color:#ff9999;">
+                    <p><b> {{$index + 1}}. </b> {{Facts[$index]}}
+                        <br><small>- Encyclipedia Britanika</small>
+                    </p>
+                        </blockquote>
+                </div>
             </div>
 
-            
         </div>
-        <div class="card" ng-repeat="fact in Facts">
-            <div class="item item-text-wrap">
-                <p><b> {{$index + 1}}. </b> {{Facts[$index]}}
-                    <br><small>- Encyclipedia Britanika</small>
-                </p>
-            </div>
-        </div>
-       
-        <!--
-        <div style="height:1000px;">
-        <iframe src="http://dragonflysearch.com/search/mobileindex.php/?q=Steve+jobs" height="1000" style=" width:100%;">Loading...</iframe>
-            </div>
---></div>
     </ion-content>
 </ion-view>
