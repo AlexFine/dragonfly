@@ -71,8 +71,8 @@ angular.module('starter.controllers', [])
                 console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
             })
     }
-    $scope.search = function () {
-        $http.get("http://dragonflysearch.com/api/search.php?q=Hello")
+    $scope.search = function (query) {
+        $http.get("http://dragonflysearch.com/api/search.php?q=" + query)
             .then(function (response) {
                 //$scope.Facts = response.data.Facts;
                 console.log("RESPONSE" + response.data.Facts);

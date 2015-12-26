@@ -24,16 +24,16 @@
 
             <div class="item item-button-right">
                <input ng-model="query" type="text" placeholder="Search"> 
-                <button class="button button-assertive"  ng-click="search()" style="height:50px;">
+                <button class="button button-assertive"  ng-click="search(query)" style="height:50px;">
                     Fly <i class=" ion-jet"></i>
                 </button>
             </div>
 
             
         </div>
-        <div class="card">
+        <div class="card" ng-repeat="fact in Facts">
             <div class="item item-text-wrap">
-                <p><b>1.</b> About two million new jobs were created in the U.S. during the year, a creditable performance but not sufficient to fully offset jobs lost during the recession.
+                <p><b> </b> {{Facts}}
                     <br><small>- Encyclipedia Britanika</small>
                 </p>
             </div>
