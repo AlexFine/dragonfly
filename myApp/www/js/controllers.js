@@ -71,4 +71,15 @@ angular.module('starter.controllers', [])
                 console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
             })
     }
+    $scope.search = function () {
+        $http.get("http://dragonflysearch.com/api/search.php?q=Hello")
+            .then(function (response) {
+                //$scope.Facts = response.data.Facts;
+                console.log("RESPONSE" + response.data.Facts);
+                dflynotes = resp.data;
+                $scope.Facts = dflynotes.Facts[0];
+                console.log("SCOPE FACTS" + Facts);
+                console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
+            })
+    }
 });
