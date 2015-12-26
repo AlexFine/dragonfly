@@ -42,17 +42,15 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function ($scope, $http) {
-    var factarray = [];
     $scope.go = function () {
         $http.get("http://dragonflysearch.com/api/search.php?q=Hello")
             .then(function (response) {
-            alert("data" + response.data.Facts);
-                $scope.Facts = response.data.Facts;
-                alert(response.data.Facts);
-                if (resp.data.Facts) {
-                    dflynotes = resp.data;
-                    $scope.Facts = dflynotes.Facts[0];                                            factarray[$index].sentences.push(dflynotes.Facts[0]);
-                }
+                //$scope.Facts = response.data.Facts;
+                console.log("RESPONSE" + response.data.Facts);
+                dflynotes = resp.data;
+                $scope.Facts = dflynotes.Facts[0];
+                console.log("SCOPE FACTS" + Facts);
+                console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
             })
     }
 
@@ -63,9 +61,14 @@ angular.module('starter.controllers', [])
 
 .controller('searchController', function ($scope, $stateParams, $http) {
     $scope.go = function () {
-        $http.get("http://www.w3schools.com/angular/customers.php")
+        $http.get("http://dragonflysearch.com/api/search.php?q=Hello")
             .then(function (response) {
-                $scope.names = response.data.records;
-            });
+                //$scope.Facts = response.data.Facts;
+                console.log("RESPONSE" + response.data.Facts);
+                dflynotes = resp.data;
+                $scope.Facts = dflynotes.Facts[0];
+                console.log("SCOPE FACTS" + Facts);
+                console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
+            })
     }
 });
