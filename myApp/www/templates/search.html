@@ -13,14 +13,14 @@
             </div>
 -->
             <div class="list">
-
+<form >
                 <div class="item item-button-right">
                     <input ng-model="query" type="text" placeholder="Search" style="width:100%;">
-                    <button class="button button-assertive" ng-click="go(query)" style="height:50px;">
+                    <button class="button button-assertive" ng-click="go(query)" style="height:50px;" type=submit>
                         Fly
                     </button>
                 </div>
-
+                </form>
 
             </div>
             <div class="card" ng-repeat="fact in Facts">
