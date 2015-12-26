@@ -47,9 +47,9 @@ angular.module('starter.controllers', [])
             .then(function (response) {
                 //$scope.Facts = response.data.Facts;
                 console.log("RESPONSE" + response.data.Facts);
-                dflynotes = resp.data;
-                $scope.Facts = dflynotes.Facts[0];
-                console.log("SCOPE FACTS" + Facts);
+                dflynotes = response.data;
+                $scope.Facts = dflynotes.Facts;
+                console.log("SCOPE FACTS" + $scope.Facts);
                 console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
             })
     }
