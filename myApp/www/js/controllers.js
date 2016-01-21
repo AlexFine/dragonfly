@@ -42,7 +42,16 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistsCtrl', function ($scope, $http, $ionicModal) {
+    $scope.bill = false;
     $scope.go = function (query) {
+        if(query === 'Absolute Zero'){
+            $scope.bill = true;
+            console.log(query);
+        }
+        else{
+            $scope.bill = false;
+        }
+        
         $http.get("http://dragonflysearch.com/api/search.php?q=" + query)
             .then(function (response) {
                 //$scope.Facts = response.data.Facts;
@@ -52,6 +61,7 @@ angular.module('starter.controllers', [])
                 console.log("SCOPE FACTS" + $scope.Facts);
                 console.log("DFLY NOTES.FACTS" + dflynotes.Facts[0]);
             })
+        
     }
 
     $ionicModal.fromTemplateUrl('my-modal.html', {

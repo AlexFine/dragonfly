@@ -1,5 +1,5 @@
 <ion-view view-title="Search">
-    <ion-content>
+    <ion-content scroll="false">
 
         <div ng-controller="PlaylistsCtrl">
 <!--
@@ -23,11 +23,26 @@
                 </form>
 
             </div>
+            
+            </ion-content>
+        <ion-content style="padding-top:70px;">
+            <div class="list">
+<form >
+                
+                    <button class="button button-assertive button-outline" ng-click="go('Absolute Zero')" style="height:40px; width:47%; margin:1%; margin-left:2%;" type=submit>
+                        Example
+                    </button><button class="button button-assertive button-outline" ng-click="go('Dragonfly')" style="height:40px; width:47%; margin:1%" type=submit>
+                        Learn
+                    </button>
+               
+                </form>
+
+            </div>
             <div class="card" ng-repeat="fact in Facts">
                 <div class="item item-text-wrap">
                     <blockquote style="border-color:#ff9999;">
                         <p style="color:#000000"><b> {{$index + 1}}. </b> {{Facts[$index]}}
-                            <br><small> Encyclipedia Britanika</small>
+                            <br><small> Encyclopedia Britannica</small>
                         </p>
                     </blockquote>
                 </div>
